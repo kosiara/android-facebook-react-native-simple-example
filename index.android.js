@@ -28,7 +28,8 @@ var {
   View,
   ToastAndroid,
   TouchableWithoutFeedback,
-  DrawerLayoutAndroid
+  DrawerLayoutAndroid,
+  TouchableHighlight
 } = React;
 
 var AwesomeProject = React.createClass({
@@ -57,11 +58,19 @@ var AwesomeProject = React.createClass({
 
                       <View style={styles.container}>
 
+                            <TouchableHighlight onPress={() => { ToastAndroid.show("Open drawer", ToastAndroid.SHORT);  this.refs.drawer.openDrawer() } } >
+                                             <Image
+                                                                    style={{width: 50, height: 50}}
+                                                                    borderWidth="2"
+                                                                    source={{uri: 'https://raw.githubusercontent.com/kosiara/android-facebook-react-native-simple-example/master/icons/ic_dehaze_black_36dp.png'}}
+                                                                      />
+                              </TouchableHighlight>
+
                                <Text style={styles.welcome}>
                                     Welcome to React Native!
                                </Text>
 
-                                <Image  onClick={this.handleClick}
+                                <Image
                                         style={{width: 100, height: 100}}
                                         borderWidth="2"
                                         source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
