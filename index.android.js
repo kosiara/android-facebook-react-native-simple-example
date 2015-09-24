@@ -34,13 +34,18 @@ var {
 var AwesomeProject = React.createClass({
   render: function() {
    var navigationView = (
-      <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
+        <View style={styles.sideMenu}>
+                  <Image style={{width: 40, height: 40}} source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}} />
+                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}>First option</Text>
+                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}>Second option</Text>
+                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}>Third option</Text>
+         </View>
     );
 
     return (
 
         <DrawerLayoutAndroid
-                      drawerWidth={300}
+                      drawerWidth={230}
                       drawerPosition={DrawerLayoutAndroid.positions.Left}
                       renderNavigationView={() => navigationView}>
 
@@ -80,6 +85,12 @@ var AwesomeProject = React.createClass({
 });
 
 var styles = StyleSheet.create({
+    sideMenu: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        backgroundColor: '#4CAF50',
+      },
   container: {
     flex: 1,
     justifyContent: 'center',
