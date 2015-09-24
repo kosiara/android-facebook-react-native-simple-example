@@ -27,40 +27,54 @@ var {
   Text,
   View,
   ToastAndroid,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  DrawerLayoutAndroid
 } = React;
 
 var AwesomeProject = React.createClass({
   render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          	Welcome to React Native!
-        </Text>
-       
- 	<Image  onClick={this.handleClick}
-		style={{width: 100, height: 100}} 
-		borderWidth="2"
-		source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
-	      />
+   var navigationView = (
+      <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
+    );
 
-	<UIExplorerPage title="ToastAndroid" >
-		<UIExplorerBlock title="Simple toast">
-		  <TouchableWithoutFeedback
-		    onPress={() =>
-		      ToastAndroid.show('This is a toast with short duration', ToastAndroid.SHORT)}>
-		    <Text style={styles.text}>Click me.</Text>
-		  </TouchableWithoutFeedback>
-		</UIExplorerBlock>
-		<UIExplorerBlock title="Toast with long duration">
-		  <TouchableWithoutFeedback
-		    onPress={() =>
-		      ToastAndroid.show('This is a toast with long duration', ToastAndroid.LONG)}>
-		    <Text style={styles.text}>Click me too.</Text>
-		  </TouchableWithoutFeedback>
-		</UIExplorerBlock>
-	</UIExplorerPage>
-      </View>
+    return (
+
+        <DrawerLayoutAndroid
+                      drawerWidth={300}
+                      drawerPosition={DrawerLayoutAndroid.positions.Left}
+                      renderNavigationView={() => navigationView}>
+
+                      <View style={styles.container}>
+
+                               <Text style={styles.welcome}>
+                                    Welcome to React Native!
+                               </Text>
+
+                                <Image  onClick={this.handleClick}
+                                        style={{width: 100, height: 100}}
+                                        borderWidth="2"
+                                        source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
+                                          />
+
+                                <UIExplorerPage title="ToastAndroid" >
+                                    <UIExplorerBlock title="Simple toast">
+                                      <TouchableWithoutFeedback
+                                        onPress={() =>
+                                          ToastAndroid.show('This is a toast with short duration', ToastAndroid.SHORT)}>
+                                        <Text style={styles.text}>Click me.</Text>
+                                      </TouchableWithoutFeedback>
+                                    </UIExplorerBlock>
+                                    <UIExplorerBlock title="Toast with long duration">
+                                      <TouchableWithoutFeedback
+                                        onPress={() =>
+                                          ToastAndroid.show('This is a toast with long duration', ToastAndroid.LONG)}>
+                                        <Text style={styles.text}>Click me too.</Text>
+                                      </TouchableWithoutFeedback>
+                                    </UIExplorerBlock>
+                                </UIExplorerPage>
+                     </View>
+
+        </DrawerLayoutAndroid>
     );
   }
 });
