@@ -1,6 +1,6 @@
 /**
  * Facebook React Android Native App Example
- *  
+ *  https://github.com/kosiara/android-facebook-react-native-simple-example
  *
  * Framework:
  * https://github.com/facebook/react-native
@@ -32,19 +32,25 @@ var {
 } = React;
 
 var AwesomeProject = React.createClass({
+
   render: function() {
+
    var navigationView = (
         <View style={styles.sideMenu}>
                   <Image style={{width: 40, height: 40}} source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}} />
-                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}>First option</Text>
-                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}>Second option</Text>
-                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}>Third option</Text>
+                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}
+                            onPress={() =>   this.refs.drawer.closeDrawer() }>First option</Text>
+                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}
+                             onPress={() =>   this.refs.drawer.closeDrawer() }>Second option</Text>
+                  <Text style={{margin: 10, fontSize: 18, textAlign: 'left'}}
+                             onPress={() =>   this.refs.drawer.closeDrawer() }>Third option</Text>
          </View>
     );
 
     return (
 
         <DrawerLayoutAndroid
+                      ref="drawer"
                       drawerWidth={230}
                       drawerPosition={DrawerLayoutAndroid.positions.Left}
                       renderNavigationView={() => navigationView}>
