@@ -58,9 +58,11 @@ var AwesomeProject = React.createClass({
 
                       <View style={styles.container}>
 
-                            <TouchableHighlight onPress={() => { ToastAndroid.show("Open drawer", ToastAndroid.SHORT);  this.refs.drawer.openDrawer() } } >
+                            <TouchableHighlight
+                                     style={{   position: 'absolute', top: 5, left: 5  }}
+                                     onPress={() => { ToastAndroid.show("Open drawer", ToastAndroid.SHORT);  this.refs.drawer.openDrawer() } } >
                                              <Image
-                                                                    style={{width: 50, height: 50}}
+                                                                    style={{width: 40, height: 40}}
                                                                     borderWidth="2"
                                                                     source={{uri: 'https://raw.githubusercontent.com/kosiara/android-facebook-react-native-simple-example/master/icons/ic_dehaze_black_36dp.png'}}
                                                                       />
