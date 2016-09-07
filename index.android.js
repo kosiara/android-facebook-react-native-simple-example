@@ -11,6 +11,7 @@ import {
   Text,
   View,
   Image,
+  TouchableHighlight,
   DrawerLayoutAndroid
 } from 'react-native';
 
@@ -36,6 +37,24 @@ class AwesomeProject extends Component {
                             drawerWidth={230}
                             drawerPosition={DrawerLayoutAndroid.positions.Left}
                             renderNavigationView={() => navigationView}>
+
+        <TouchableHighlight
+                 style={{   position: 'absolute', top: 5, left: 5  }}
+                 onPress={() => { ToastAndroid.show("Open drawer", ToastAndroid.SHORT);  this.refs.drawer.openDrawer() } } >
+                     <Image
+                     style={[ styles.base, styles.background, {
+                            width: 50, height: 50, borderWidth: 1, borderColor: '#ff000000'}]}
+                            source={{uri: 'https://raw.githubusercontent.com/kosiara/android-facebook-react-native-simple-example/master/icons/ic_dehaze_black_36dp.png'}}
+                              />
+          </TouchableHighlight>
+
+          <Image
+                style={{width: 150, height: 150}}
+                borderWidth={2}
+                marginTop={70}
+                marginLeft={10}
+                source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
+                  />
 
           <View style={styles.container}>
             <Text style={styles.welcome}>
