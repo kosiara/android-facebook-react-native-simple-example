@@ -11,6 +11,7 @@ import {
   Text,
   View,
   Image,
+  ToastAndroid,
   TouchableHighlight,
   DrawerLayoutAndroid
 } from 'react-native';
