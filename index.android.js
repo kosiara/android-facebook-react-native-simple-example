@@ -57,16 +57,24 @@ class AwesomeProject extends Component {
                 source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
                   />
 
+
+
           <View style={styles.container}>
             <Text style={styles.welcome}>
               Welcome to React Native!
             </Text>
-            <Text style={styles.instructions}>
-              To get started, edit index.android.js
+
+            <Text
+                style={{borderWidth: 1, borderColor: '#000000'}}
+                onPress={() =>
+                  ToastAndroid.show('This is a toast with short duration', ToastAndroid.SHORT)}>
+                Click me
             </Text>
-            <Text style={styles.instructions}>
-              Double tap R on your keyboard to reload,{'\n'}
-              Shake or press menu button for dev menu
+
+            <Text
+                onPress={() =>
+                  ToastAndroid.show('This is a toast with short duration', ToastAndroid.LONG)}>
+                Click me too.
             </Text>
           </View>
 
